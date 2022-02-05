@@ -1,43 +1,45 @@
-import React, {useEffect, useState} from 'react';
-import styles from './app.module.css';
-import VideoList from './components/video_list/video_list';
-import SearchHeader from './components/search_header/search_header';
+import React, { useEffect, useState } from "react";
+import styles from "./app.module.css";
+import VideoList from "./components/video_list/video_list";
+import SearchHeader from "./components/search_header/search_header";
+import VideoDetail from "./components/video_detail/video_detail";
 
-
-
-function App() {
+function App({ youtube }) {
   const [videos, setVideos] = useState([]);
-  const search = query => {
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
-    };
-    
-    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=AIzaSyAxA5abUv9foNe9dJx43tgjR45xelqFmZo`, requestOptions)
-      .then(response => response.json())
-      .then(result => result.items.map(item => ({...item, id: item.id.videoId})))
-      .then(items => setVideos(items))
-      .catch(error => console.log('error', error));
-  }
-  useEffect(()=>{
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
-    };
-    
-    fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyAxA5abUv9foNe9dJx43tgjR45xelqFmZo", requestOptions)
-      .then(response => response.json())
-      .then(result => setVideos(result.items))
-      .catch(error => console.log('error', error));
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-  },[]);
- return (
- <div className={styles.app}>
- <SearchHeader onSearch={search}/>
- <VideoList videos = {videos}/>
- </div>
- )
-
+  const selectVideo = (video) => {
+    setSelectedVideo(video);
+  };
+  const search = (query) => {
+    youtube
+    .search(query)//
+    .then(videos => setVideos(videos));
+  };
+  useEffect(() => {
+    youtube
+    .mostPopular()//
+    .then(videos => setVideos(videos));
+  }, []);
+  return (
+    <div className={styles.app}>
+      <SearchHeader onSearch={search} />
+      <section className={styles.content}>
+        {selectedVideo && (
+          <div className={styles.detail}>
+            <VideoDetail video={selectedVideo} />
+          </div>
+        )}
+        <div className={styles.list}>
+          <VideoList
+            videos={videos}
+            onVideoClick={selectVideo}
+            display={selectedVideo ? "list" : "grid"}
+          />
+        </div>
+      </section>
+    </div>
+  );
 }
 
 export default App;

@@ -1,27 +1,72 @@
-
 .header {
   display: flex;
   height: 4rem;
   padding: 0.5em 1em;
-  background: black; 
-  color: white;
+  /* background: black; */
+  color: black;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .logo {
   display: flex;
   align-items: center;
   margin-right: 1em;
 }
-
+.bars {
+  height: 1.2em;
+  background: white;
+  padding-left: 1em;
+}
+.image {
+  margin-left: 1em;
+  height: 2em;
+}
+.title {
+  font-size: 1.5em;
+}
+.search {
+  display: flex;
+  align-items: center;
+}
 .input {
-  flex-basis: 100%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   outline: 0;
+  height: 2.2em;
+  width: 40em;
 }
 .button {
-  background-color: darkgrey;
-outline: 0;
+  height: 2.6em;
+  width: 3.5em;
+  /* background-color: #F8F8F8; */
+  outline: 0;
 }
 .buttonImage {
   height: 100%;
-  padding: 0.5em 0.2em;
+  /* padding: 0.5em 0.2em; */
+  /* color: #030303; */
+}
+.microphoneButton {
+  margin-left: 1em;
+  border-radius: 50%;
+  border: none;
+  height: 2.5em;
+  width: 2.5em;
+}
+.microphone {
+  height: 1.5em;
+  background-color: #f8f8f8;
+}
+.icons {
+  margin: 1em;
+  display: flex;
+  align-items: center;
+}
+.video, .th, .bell {
+padding-right: 1.4em;
+height: 1.2em;
+}
+.jihye {
+  height: 2.5em;
+  border-radius: 50%;
 }
