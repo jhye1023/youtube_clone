@@ -39,7 +39,11 @@ const SearchHeader = ({ onSearch }) => {
           />
         </button>
         <button className={styles.microphoneButton} type="submit">
-        <img className={styles.microphone} src="/image/microphone.png" alt="microphone" />
+          <img
+            className={styles.microphone}
+            src="/image/microphone.png"
+            alt="microphone"
+          />
         </button>
       </div>
       <div className={styles.icons}>

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./video_item.module.css";
 
-const VideoItem = ({ video, video: { snippet }, onVideoClick, display }) => {
+const VideoItem = ({ video, video: { snippet }, onVideoClick, display, parseIntView, publishDate}) => {
   const displayType = display === "list" ? styles.list : styles.grid;
   return (
     <li
@@ -17,6 +17,7 @@ const VideoItem = ({ video, video: { snippet }, onVideoClick, display }) => {
         <div className={styles.metadata}>
           <p className={styles.title}>{snippet.title}</p>
           <p className={styles.channel}>{snippet.channelTitle}</p>
+          <p className={styles.views}>{`${parseIntView(video.statistics.viewCount)} • ${publishDate(snippet.publishedAt)}`}</p>
         </div>
       </div>
     </li>
