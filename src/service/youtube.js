@@ -29,6 +29,19 @@ class Youtube {
     });
 return response.data.items.map(item => ({...item, id: item.id.videoId}));
 }
+
+async comment(videoId) {
+  const response = await this.youtube.get('commentThreads', {
+    params : {
+    part: "snippet",
+    videoId: videoId,
+    textFormat: "plainText",
+    order: "time",
+    maxResults: 25,
+    }
+  });
+  return response;
+}
 // async channel(channel_id){
 //   const response = await this.youtube.get('channels', {
 //     params: {

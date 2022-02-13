@@ -19,6 +19,8 @@ const VideoDetail = ({ video, parseIntView, publishDate }) => (
     <h3>{video.snippet.channelTitel}</h3>
     <pre className={styles.description}>{video.snippet.description}</pre>
     <p className={styles.views}>{`${parseIntView(video.statistics.viewCount)} • ${publishDate(video.snippet.publishedAt)}`}</p>
+
   </section>
+ 
 );
 export default VideoDetail;

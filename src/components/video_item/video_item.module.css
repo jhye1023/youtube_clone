@@ -5,8 +5,9 @@
 }
 
 .grid {
-  width: 20%;
+  width: 23%;
   border: none;
+  padding-right: 1em;
 }
 .container.list {
   width: 100%;
