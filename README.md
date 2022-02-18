@@ -6,8 +6,8 @@
 ![Home Page](/public/main.png)
 ![Detail](/public/detail.png)
 
-: Showing popular video on the main page and searching video.
-: In addition to the thumbnail, title, and channel name of each video in the list, the number of views, uploaded date, and comments are displayed.
+- Showing popular video on the main page and searching video.
+- In addition to the thumbnail, title, and channel name of each video in the list, the number of views, uploaded date, and comments are displayed.
 
 ### function
 - Show popular videos
