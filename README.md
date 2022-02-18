@@ -1,10 +1,10 @@
 
 ### Youtube Clone Coding
 
+[https://jh-youtube-clone](https://jh-youtube-clone.netlify.app/)
+
 ![Home Page](/public/main.png)
 ![Detail](/public/detail.png)
-
-[https://jh-youtube-clone](https://jh-youtube-clone.netlify.app/)
 
 : Showing popular video on the main page and searching video.
 : In addition to the thumbnail, title, and channel name of each video in the list, the number of views, uploaded date, and comments are displayed.
