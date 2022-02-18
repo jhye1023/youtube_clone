@@ -20,8 +20,10 @@ const SearchHeader = ({ onSearch }) => {
     <header className={styles.header}>
       <div className={styles.logo}>
         <img className={styles.bars} src="/image/bars.png" alt="bars" />
-        <img className={styles.image} src="/image/logo.png" alt="logo" />
-        <div className={styles.title}>Youtube</div>
+        <a href="/" className={styles.moveHome}>
+          <img className={styles.image} src="/image/logo.png" alt="logo" />
+          <div className={styles.title}>Youtube</div>
+        </a>
       </div>
       <div className={styles.search}>
         <input

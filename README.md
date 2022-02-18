@@ -1,3 +1,24 @@
+
+### Youtube Clone Coding
+
+![Home Page](../public/main.png)
+![detail](../public/detail.png)
+
+[Youtube Clone Coding](https://jh-youtube-clone.netlify.app/)
+
+: Showing popular video on the main page and searching video.
+: In addition to the thumbnail, title, and channel name of each video in the list, the number of views, uploaded date, and comments are displayed.
+
+### function
+- Show popular videos
+- Search videos
+- Play selcected video
+- Show details on selected video 
+
+### Purpose of the project: understanding React
+- Understand Components and Hook
+- Use PostCss: It was okay to use the existing Css or Sass, but for the inconvenience of having to change the class name each time, I applied PostCss, which can be modularized.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
